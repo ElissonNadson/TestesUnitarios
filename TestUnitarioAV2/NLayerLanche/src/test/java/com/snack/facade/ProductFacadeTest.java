@@ -73,35 +73,35 @@ public class ProductFacadeTest {
         productFacade.append(product1);
         productFacade.append(product2);
         List<Product> products = productFacade.getAll();
-        assertEquals(2, products.size(), "Deve haver 2 produtos na lista.");
+        assertEquals(2, products.size());
     }
 
     @Test
     public void deveRetornarProdutoCorretoPorId() {
         productFacade.append(product1);
         Product retrievedProduct = productFacade.getById(product1.getId());
-        assertNotNull(retrievedProduct, "O produto deve ser recuperado por ID válido.");
-        assertEquals(product1.getId(), retrievedProduct.getId(), "O ID do produto recuperado deve ser igual ao ID do produto adicionado.");
+        assertNotNull(retrievedProduct);
+        assertEquals(product1.getId(), retrievedProduct.getId());
     }
 
     @Test
     public void deveRetornarTrueParaIdExistenteEFalseParaIdInexistente() {
         productFacade.append(product1);
-        assertTrue(productFacade.exists(product1.getId()), "O produto deve existir no repositório.");
-        assertFalse(productFacade.exists(999), "O produto não deve existir no repositório.");
+        assertTrue(productFacade.exists(product1.getId()));
+        assertFalse(productFacade.exists(999));
     }
 
     @Test
     public void deveAdicionarNovoProdutoCorretamente() {
         productFacade.append(product1);
         List<Product> products = productFacade.getAll();
-        assertTrue(products.contains(product1), "A lista de produtos deve conter o produto adicionado.");
+        assertTrue(products.contains(product1));
     }
 
     @Test
     public void deveRemoverProdutoExistentePorId() {
         productFacade.append(product1);
         productFacade.remove(product1.getId());
-        assertFalse(productFacade.exists(product1.getId()), "O produto deve ser removido do repositório.");
+        assertFalse(productFacade.exists(product1.getId()));
     }
 }

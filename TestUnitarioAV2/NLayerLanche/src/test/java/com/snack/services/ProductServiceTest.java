@@ -27,7 +27,6 @@ public class ProductServiceTest {
             fail("A imagem do produto não existe no caminho especificado.");
         }
         productService.save(product1);
-        // Adicione asserções conforme necessário para verificar o comportamento esperado
     }
 
     @Test
@@ -37,7 +36,6 @@ public class ProductServiceTest {
             fail("A imagem do produto não deveria existir no caminho especificado.");
         }
         productService.save(product2);
-        // Adicione asserções conforme necessário para verificar o comportamento esperado
     }
 
     @Test
@@ -45,20 +43,18 @@ public class ProductServiceTest {
         productService.save(product1);
         Product updatedProduct = new Product(1, "Updated Hotdog", 5.00f, "src/main/resources/imagens/UpdatedHotDog.jpg");
         productService.update(updatedProduct);
-        // Adicione asserções conforme necessário para verificar o comportamento esperado
     }
 
     @Test
     public void deveRemoverProdutoExistente() {
         productService.save(product1);
         productService.remove(product1.getId());
-        // Adicione asserções conforme necessário para verificar o comportamento esperado
     }
 
     @Test
     public void deveObterCaminhoDaImagemPorId() {
         productService.save(product1);
         String imagePath = productService.getImagePathById(product1.getId());
-        assertEquals(product1.getImage(), imagePath, "O caminho da imagem deve ser igual ao caminho especificado no produto.");
+        assertEquals(product1.getImage(), imagePath);
     }
 }
