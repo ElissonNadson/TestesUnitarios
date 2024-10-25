@@ -11,8 +11,11 @@ import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 
 public class ProductService {
-    private String filePath = "C:\\Users\\aluno\\BancoImagens\\";
+    private String filePath = "C:\\Users\\Nadson\\Desktop\\TestesUnitarios\\TestUnitarioAV2\\NLayerLanche\\src\\main\\resources\\imagens";
 
+    // **************
+
+    // Método para obter a extensão do arquivo
     private String getFileExtension(Path path) {
         String filename = path.getFileName().toString();
         int lastDotIndex = filename.lastIndexOf('.');
@@ -24,6 +27,9 @@ public class ProductService {
         return filename.substring(lastDotIndex + 1);
     }
 
+    // **************
+
+    // Método para salvar a imagem do produto
     public boolean save(Product product) {
         Path path = Paths.get(product.getImage());
 
@@ -42,17 +48,26 @@ public class ProductService {
         return false;
     }
 
+    // **************
+
+    // Método para obter o caminho da imagem pelo ID do produto
     public String getImagePathById(int id) {
         File directory = new File(filePath);
         File[] matches = directory.listFiles((dir, name) -> name.startsWith(String.valueOf(id)));
         return Arrays.stream(matches).findFirst().get().getAbsolutePath();
     }
 
+    // **************
+
+    // Método para atualizar a imagem do produto
     public void update(Product product) {
         remove(product.getId());
         save(product);
     }
 
+    // **************
+
+    // Método para remover a imagem do produto pelo ID
     public void remove(int id) {
         Path path = Paths.get(getImagePathById(id));
 

@@ -3,38 +3,64 @@ package com.snack.repositories;
 import com.snack.entities.Product;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ProductRepository {
-    private List<Product> products = new ArrayList<Product>();
+    private List<Product> products; // Lista de produtos
 
+    // Construtor que inicializa a lista de produtos
+    public ProductRepository() {
+        this.products = new ArrayList<>();
+    }
+
+    // **************
+
+    // Método para obter todos os produtos
     public List<Product> getAll() {
-        return products;
+        return new ArrayList<>(this.products);
     }
 
+    // **************
+
+    // Método para obter um produto pelo ID
     public Product getById(int id) {
-        Product product = products.stream().filter(p -> p.getId() == id).findFirst().get();
-        return product;
+        return this.products.stream()
+                .filter(product -> product.getId() == id)
+                .findFirst()
+                .orElse(null);
     }
 
+    // **************
+
+    // Método para verificar se um produto existe pelo ID
     public boolean exists(int id) {
-        return products.stream().anyMatch(p -> p.getId() == id);
+        return this.products.stream()
+                .anyMatch(product -> product.getId() == id);
     }
 
+    // **************
+
+    // Método para adicionar um novo produto
     public void append(Product product) {
-//        products.add(product);
+        this.products.add(product);
     }
 
+    // **************
+
+    // Método para remover um produto pelo ID
     public void remove(int id) {
-        products.removeIf(product -> product.getId() == id);
+        this.products.removeIf(product -> product.getId() == id);
     }
 
-    public void update(int id, Product product) {
-        Product productInDb = products.stream().filter(p -> p.getId() == id).findFirst().get();
+    // **************
 
-        productInDb.setDescription(product.getDescription());
-        productInDb.setPrice(product.getPrice());
-        productInDb.setImage(product.getImage());
+    // Método para atualizar um produto existente
+    public void update(int id, Product updatedProduct) {
+        for (int i = 0; i < this.products.size(); i++) {
+            if (this.products.get(i).getId() == id) {
+                this.products.set(i, updatedProduct);
+                break;
+            }
+        }
     }
 }
