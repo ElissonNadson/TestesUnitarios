@@ -1,0 +1,14 @@
+Cada equipe deverá criar uma apresentação/slide com base nos respectivos artigos:
+Vendas - Thigaz Team
+Clinica - Antônio Victor
+Ônibus - Primo Team
+Escola - Deusa
+Gede - Carlos
+AVA - Ian
+No slide deve conter:
+- Sobre o aplicativo descrito no artigo
+- No mínimo 5 requisitos funcionais
+- No mínimo 2 requisitos NÃO funcionais
+- 20 casos de teste possíveis com base no modelo em anexo, escolher UM DOS MODELOS DISPONÍVEIS.
+
+O TRABALHO DEVE SER FOCADO NO ARTIGO, NÃO USAR CHATGPT!!!

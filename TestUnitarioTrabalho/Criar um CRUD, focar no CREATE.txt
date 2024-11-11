@@ -1,0 +1,66 @@
+PARTE 1:
+- Criar um CRUD, focar no CREATE.
+- Pode usar o CRUD feito na disciplina de Interface Homem Computador, o grupo não pode copiar a tela de outro grupo.
+- O CRUD DEVE SER DO GRUPO!!!!!
+- O formulário do CRUD deve possuir campos com suas respectivas validações (email, cpf, teelfone) e máscaras como:
+Telefone = (XX) XXXXX-XXXX
+CPF = XXX.XXX.XXX-XX
+Email
+Senha (Tamanho mínimo 8)
+Double check do email e senha
+Deve ser estabelecido a quantidade de caracteres máxima e mínima de cada campo.
+
+
+PARTE 2:
+Criar uma automação DO CRUD utilizando qualquer linguagem e o framework selenium visto em sala de aula.
+Pode user o código em anexo para realizar a automação.
+A automação deve automatizar a tela de CREATE (Criação), e realizar os seguintes casos de teste:
+Dependências: pip install selenium , pip install webdriver-manager
+0. Tamanho mínimo da senha
+Validar o tamanho mínimo da senha.
+Senha: 12345678
+Válido.
+Quantidade de caracteres da senha abaixo do mínimo
+1234567 
+Inválido.
+
+1. Validação do Telefone
+Validar formato de telefone correto.
+(11) 91234-5678
+Válido.
+Validar formato de telefone incorreto.
+(11) 1234-5678
+Inválido.
+
+2. Validação do CPF
+Validar CPF válido.
+123.456.789-09
+Válido.
+Validar CPF inválido.
+123.456.789-00
+Inválido.
+
+3. Validação do Email
+Validar email com formato correto.
+teste@exemplo.com
+Válido.
+Validar email com formato incorreto.
+teste@exemplo@com
+Inválido.
+
+4. Double Check do Email e Senha
+Validar se o email e a senha coincidem.
+Email: teste@exemplo.com, Senha: Senha123, Confirmação da Senha: Senha123
+Válido.
+Validar se o email e a senha não coincidem.
+Email: teste@exemplo.com, Senha: Senha123, Confirmação da Senha: Senha456
+Inválido.
+
+5. Sucesso
+ Preencher todos os dados corretamente e gravar com sucesso
+ 
+Telefone = (75) 55544-4444
+CPF = 210.830.180-19
+Email = teste@teste.com.br
+Senha = 12345678
+Double check do email e senha = 12345678
