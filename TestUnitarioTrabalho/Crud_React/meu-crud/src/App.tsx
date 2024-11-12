@@ -17,6 +17,8 @@ const AppContainer = styled(Container)`
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
+  background-color: #fff;
+
 `;
 
 const ColumnsContainer = styled.div`

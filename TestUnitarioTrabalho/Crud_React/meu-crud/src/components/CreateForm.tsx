@@ -71,6 +71,7 @@ const Title = styled(Typography)`
   font-size: 1.5rem; 
   text-align: center; 
   margin-bottom: 1rem;
+  color: #1976d2;
 `;
 
 const CreateForm: React.FC<CreateFormProps> = ({ onAddCadastro }) => {

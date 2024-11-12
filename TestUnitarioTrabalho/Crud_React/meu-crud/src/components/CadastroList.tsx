@@ -13,13 +13,17 @@ interface CadastroListProps {
 }
 
 const CadastroListContainer = styled.div`
-  margin-top: 4rem; 
+  margin-top: 32px; 
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
 `;
 
 const Title = styled(Typography)`
   font-size: 1.5rem;
   text-align: center; 
   margin-bottom: 1rem; 
+   color: #1976d2;
 `;
 
 const CadastroList: React.FC<CadastroListProps> = ({ cadastros }) => {
